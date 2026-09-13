@@ -17,22 +17,45 @@
 </head>
 <body>
   <main class="buzzer-container">
+    <!-- Header -->
     <div class="header-block">
       <span class="brand-tag">SPE UI</span>
       <h1 class="title">Buzzer Ranking</h1>
       <div id="status" class="status">connecting...</div>
     </div>
 
-    <ol id="ranking" class="ranking-list">
-      <div class="empty-placeholder">
-        <div class="waiting-pill">
-          <span class="waiting-dot"></span>
-          <span class="waiting-dot"></span>
-          <span class="waiting-dot"></span>
+    <!-- Minimalist Timer Section -->
+    <section class="timer-card">
+      <div class="timer-display-wrap">
+        <span class="timer-label">Question Timer</span>
+        <div id="timerDisplay" class="timer-digits">15s</div>
+      </div>
+      <div class="timer-controls">
+        <button type="button" id="timerToggleBtn" class="btn-timer-action" onclick="toggleTimer()">Start</button>
+        <button type="button" id="timerResetBtn" class="btn-timer-action" onclick="resetTimer()">Reset</button>
+        <div class="timer-presets">
+          <button type="button" class="btn-preset active" onclick="setTimerDuration(10)">10s</button>
+          <button type="button" class="btn-preset" onclick="setTimerDuration(15)">15s</button>
+          <button type="button" class="btn-preset" onclick="setTimerDuration(30)">30s</button>
         </div>
       </div>
-    </ol>
+    </section>
 
+    <!-- Leaderboard / Buzz Order -->
+    <section class="leaderboard-section">
+      <div class="section-title">Buzz Order</div>
+      <ol id="ranking" class="ranking-list">
+        <div class="empty-placeholder">
+          <div class="waiting-pill">
+            <span class="waiting-dot"></span>
+            <span class="waiting-dot"></span>
+            <span class="waiting-dot"></span>
+          </div>
+        </div>
+      </ol>
+    </section>
+
+    <!-- Main Action Button -->
     <button type="button" id="resetBtn" class="btn-reset" onclick="resetRound()">
       <span>New Round</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,6 +63,17 @@
         <path d="M12 5l7 7-7 7"></path>
       </svg>
     </button>
+
+    <!-- Scoreboard Grid -->
+    <section class="scoreboard-section">
+      <div class="scoreboard-header">
+        <span class="section-title">Scoreboard</span>
+        <button type="button" class="btn-text" onclick="resetAllScores()">Reset Scores</button>
+      </div>
+      <div class="scoreboard-grid" id="scoreboardGrid">
+        <!-- Rendered dynamically for Player 1 - 4 -->
+      </div>
+    </section>
   </main>
 
   <!-- Custom SPE UI Modal Popup -->
