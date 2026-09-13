@@ -116,8 +116,8 @@ function renderScoreboard() {
         <span class="score-digits" id="scoreVal${index}">${state.scores[index]}</span>
       </div>
       <div class="score-btn-group">
-        <button type="button" class="btn-score-mod" onclick="modifyScore(${index}, 1)">+1</button>
-        <button type="button" class="btn-score-mod" onclick="modifyScore(${index}, -1)">-1</button>
+        <button type="button" class="btn-score-mod" onclick="modifyScore(${index}, 10)">+10</button>
+        <button type="button" class="btn-score-mod" onclick="modifyScore(${index}, -5)">-5</button>
       </div>
     `;
     scoreboardGrid.appendChild(card);
