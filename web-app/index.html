@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buzzer Ranking - SPE UI</title>
+  
+  <!-- Host Grotesk font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- GSAP Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="buzzer-container">
+    <div class="header-block">
+      <span class="brand-tag">SPE UI</span>
+      <h1 class="title">Buzzer Ranking</h1>
+      <div id="status" class="status">connecting...</div>
+    </div>
+
+    <ol id="ranking" class="ranking-list">
+      <div class="empty-placeholder">
+        <div class="waiting-pill">
+          <span class="waiting-dot"></span>
+          <span class="waiting-dot"></span>
+          <span class="waiting-dot"></span>
+        </div>
+      </div>
+    </ol>
+
+    <button type="button" id="resetBtn" class="btn-reset" onclick="resetRound()">
+      <span>New Round</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"></path>
+        <path d="M12 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </main>
+
+  <!-- Custom SPE UI Modal Popup -->
+  <div id="customModal" class="modal-backdrop">
+    <div class="modal-card">
+      <h3 id="modalTitle" class="modal-title">Notification</h3>
+      <p id="modalMessage" class="modal-message"></p>
+      <button type="button" id="modalCloseBtn" class="btn-modal" onclick="closeModal()">OK</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
